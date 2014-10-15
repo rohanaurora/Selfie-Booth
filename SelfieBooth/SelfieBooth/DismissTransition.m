@@ -11,6 +11,7 @@
 @implementation DismissTransition
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
+    
     UIViewController *detail = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
     [UIView animateWithDuration:0.3 animations:^{

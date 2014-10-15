@@ -28,6 +28,8 @@
 		93913A3B19ED95CD00C2E30B /* SelfieController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A3A19ED95CD00C2E30B /* SelfieController.m */; };
 		93913A4319EE4D6F00C2E30B /* PresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A4219EE4D6F00C2E30B /* PresentTransition.m */; };
 		93913A4619EE4D9A00C2E30B /* DismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A4519EE4D9A00C2E30B /* DismissTransition.m */; };
+		93A05C8819EE5813000DEDB3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A05C8719EE5813000DEDB3 /* Reachability.m */; };
+		93A05C8F19EE5CB2000DEDB3 /* NetCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A05C8E19EE5CB2000DEDB3 /* NetCheck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,10 @@
 		93913A4219EE4D6F00C2E30B /* PresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentTransition.m; sourceTree = "<group>"; };
 		93913A4419EE4D9A00C2E30B /* DismissTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissTransition.h; sourceTree = "<group>"; };
 		93913A4519EE4D9A00C2E30B /* DismissTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissTransition.m; sourceTree = "<group>"; };
+		93A05C8619EE5813000DEDB3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		93A05C8719EE5813000DEDB3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		93A05C8D19EE5CB2000DEDB3 /* NetCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetCheck.h; path = ../NetCheck.h; sourceTree = "<group>"; };
+		93A05C8E19EE5CB2000DEDB3 /* NetCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetCheck.m; path = ../NetCheck.m; sourceTree = "<group>"; };
 		AE297308334D7DE852E11A91 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,10 +144,12 @@
 			isa = PBXGroup;
 			children = (
 				93913A3C19ED99C300C2E30B /* Delegate */,
+				93913A4019ED99EB00C2E30B /* Detail View Controller */,
 				93913A3D19ED99D000C2E30B /* Collection View Controller */,
+				93A05C8919EE5847000DEDB3 /* Reachability Classes */,
+				93A05C8519EE55E5000DEDB3 /* Custom Transition Classes */,
 				93913A3E19ED99D800C2E30B /* Collection View Cell */,
 				93913A3F19ED99E300C2E30B /* Selfie Controller */,
-				93913A4019ED99EB00C2E30B /* Detail View Controller */,
 				9300552E19ED8A3D00940A7A /* Supporting Files */,
 			);
 			path = SelfieBooth;
@@ -227,12 +235,30 @@
 			children = (
 				93913A3619ED953B00C2E30B /* DetailsViewController.h */,
 				93913A3719ED953B00C2E30B /* DetailsViewController.m */,
+			);
+			name = "Detail View Controller";
+			sourceTree = "<group>";
+		};
+		93A05C8519EE55E5000DEDB3 /* Custom Transition Classes */ = {
+			isa = PBXGroup;
+			children = (
 				93913A4119EE4D6F00C2E30B /* PresentTransition.h */,
 				93913A4219EE4D6F00C2E30B /* PresentTransition.m */,
 				93913A4419EE4D9A00C2E30B /* DismissTransition.h */,
 				93913A4519EE4D9A00C2E30B /* DismissTransition.m */,
 			);
-			name = "Detail View Controller";
+			name = "Custom Transition Classes";
+			sourceTree = "<group>";
+		};
+		93A05C8919EE5847000DEDB3 /* Reachability Classes */ = {
+			isa = PBXGroup;
+			children = (
+				93A05C8D19EE5CB2000DEDB3 /* NetCheck.h */,
+				93A05C8E19EE5CB2000DEDB3 /* NetCheck.m */,
+				93A05C8619EE5813000DEDB3 /* Reachability.h */,
+				93A05C8719EE5813000DEDB3 /* Reachability.m */,
+			);
+			name = "Reachability Classes";
 			sourceTree = "<group>";
 		};
 		AA0767B49904067A2C2CD348 /* Pods */ = {
@@ -383,6 +409,8 @@
 				93913A3519ED939C00C2E30B /* SelfieViewCell.m in Sources */,
 				93913A4619EE4D9A00C2E30B /* DismissTransition.m in Sources */,
 				93913A4319EE4D6F00C2E30B /* PresentTransition.m in Sources */,
+				93A05C8819EE5813000DEDB3 /* Reachability.m in Sources */,
+				93A05C8F19EE5CB2000DEDB3 /* NetCheck.m in Sources */,
 				9300553419ED8A3D00940A7A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

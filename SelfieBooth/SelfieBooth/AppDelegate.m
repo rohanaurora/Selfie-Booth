@@ -20,7 +20,7 @@
     // Get client ID from Instagram client - http://instagram.com/developer/clients/manage/
     
     SimpleAuth.configuration[@"instagram"] = @{@"client_id" : @"2893e6e0cb97452583f336fa369a7faa",
-                                   SimpleAuthRedirectURIKey : @"selfiebooth://auth/instagram" };
+                                               SimpleAuthRedirectURIKey : @"selfiebooth://auth/instagram" };
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -46,7 +46,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -57,12 +57,35 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    NSString * const ServerHost = @"www.google.com";
+    NetCheck *netCheck = [[NetCheck alloc] init];
+    netCheck.delegate = self;
+    [netCheck checkReachabilityForHost:ServerHost];
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+# pragma mark - NetCheckDelegate
+
+- (void)reachabilityFinishedWithInternetReachable:(Boolean)internetReachable HostReachable:(Boolean)hostReachable {
+    
+    if (!(internetReachable && hostReachable)) {
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection"
+                                                        message:@"You must be connected to the internet to use this app."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 @end

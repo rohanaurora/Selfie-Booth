@@ -12,6 +12,7 @@
 #import "DetailsViewController.h"
 #import "PresentTransition.h"
 #import "DismissTransition.h"
+#import "Reachability.h"
 
 @interface SelfieCollectionViewController () <UIViewControllerTransitioningDelegate>
 
@@ -22,6 +23,7 @@
 #pragma mark - Initialization
 
 -(instancetype) init {
+
     
     // Layout for collection view
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -129,7 +131,7 @@
         
         NSURLSessionConfiguration *sessionConfigForDeal = [NSURLSessionConfiguration defaultSessionConfiguration];
         
-        NSString *myString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/selfie/media/recent?access_token=%@", self.accessToken];
+        NSString *myString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/astonmartin/media/recent?access_token=%@", self.accessToken];
         NSURL * url = [NSURL URLWithString:myString];
         
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -168,7 +170,7 @@
     // Trying to access more than 20 images. Pulled a request on Github - https://github.com/Instagram/instagram-ruby-gem/issues/140
     // Currently, able to fetch 33 images with a &count parameter to URL
     
-    NSString *tagMediaURL = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/selfie/media/recent?access_token=%@&max_tag_id=%@&count=200", self.accessToken, self.max_id];
+    NSString *tagMediaURL = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/selfies/media/recent?access_token=%@&max_tag_id=%@&count=200", self.accessToken, self.max_id];
     
     NSLog(@"%@",tagMediaURL);
     
