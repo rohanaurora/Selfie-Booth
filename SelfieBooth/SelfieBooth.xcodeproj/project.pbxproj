@@ -26,6 +26,8 @@
 		93913A3519ED939C00C2E30B /* SelfieViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A3419ED939C00C2E30B /* SelfieViewCell.m */; };
 		93913A3819ED953B00C2E30B /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A3719ED953B00C2E30B /* DetailsViewController.m */; };
 		93913A3B19ED95CD00C2E30B /* SelfieController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A3A19ED95CD00C2E30B /* SelfieController.m */; };
+		93913A4319EE4D6F00C2E30B /* PresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A4219EE4D6F00C2E30B /* PresentTransition.m */; };
+		93913A4619EE4D9A00C2E30B /* DismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A4519EE4D9A00C2E30B /* DismissTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,10 @@
 		93913A3719ED953B00C2E30B /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		93913A3919ED95CD00C2E30B /* SelfieController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfieController.h; sourceTree = "<group>"; };
 		93913A3A19ED95CD00C2E30B /* SelfieController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfieController.m; sourceTree = "<group>"; };
+		93913A4119EE4D6F00C2E30B /* PresentTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentTransition.h; sourceTree = "<group>"; };
+		93913A4219EE4D6F00C2E30B /* PresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentTransition.m; sourceTree = "<group>"; };
+		93913A4419EE4D9A00C2E30B /* DismissTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissTransition.h; sourceTree = "<group>"; };
+		93913A4519EE4D9A00C2E30B /* DismissTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissTransition.m; sourceTree = "<group>"; };
 		AE297308334D7DE852E11A91 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,6 +227,10 @@
 			children = (
 				93913A3619ED953B00C2E30B /* DetailsViewController.h */,
 				93913A3719ED953B00C2E30B /* DetailsViewController.m */,
+				93913A4119EE4D6F00C2E30B /* PresentTransition.h */,
+				93913A4219EE4D6F00C2E30B /* PresentTransition.m */,
+				93913A4419EE4D9A00C2E30B /* DismissTransition.h */,
+				93913A4519EE4D9A00C2E30B /* DismissTransition.m */,
 			);
 			name = "Detail View Controller";
 			sourceTree = "<group>";
@@ -371,6 +381,8 @@
 				93913A3819ED953B00C2E30B /* DetailsViewController.m in Sources */,
 				93913A3219ED91C700C2E30B /* SelfieCollectionViewController.m in Sources */,
 				93913A3519ED939C00C2E30B /* SelfieViewCell.m in Sources */,
+				93913A4619EE4D9A00C2E30B /* DismissTransition.m in Sources */,
+				93913A4319EE4D6F00C2E30B /* PresentTransition.m in Sources */,
 				9300553419ED8A3D00940A7A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

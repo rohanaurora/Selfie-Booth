@@ -10,8 +10,10 @@
 #import "SelfieViewCell.h"
 #import <SimpleAuth/SimpleAuth.h>
 #import "DetailsViewController.h"
+#import "PresentTransition.h"
+#import "DismissTransition.h"
 
-@interface SelfieCollectionViewController ()
+@interface SelfieCollectionViewController () <UIViewControllerTransitioningDelegate>
 
 @end
 
@@ -94,16 +96,26 @@
 
 
 // Tells the delegate that the photo at the specified index path was selected.
--(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     NSDictionary *photo = self.photos[indexPath.row];
-    
     DetailsViewController *dvc = [[DetailsViewController alloc] init];
+    dvc.modalPresentationStyle = UIModalPresentationCustom;
+    dvc.transitioningDelegate = self;
     dvc.photo = photo;
     
     [self presentViewController:dvc animated:YES completion:nil];
 }
 
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    return [[PresentTransition alloc] init];
+}
+
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return [[DismissTransition alloc] init];
+}
 
 
 #pragma mark - First Network Call
