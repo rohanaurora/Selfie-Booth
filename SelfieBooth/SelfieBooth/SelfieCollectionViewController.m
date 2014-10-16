@@ -12,7 +12,6 @@
 #import "DetailsViewController.h"
 #import "PresentTransition.h"
 #import "DismissTransition.h"
-#import "Reachability.h"
 
 @interface SelfieCollectionViewController () <UIViewControllerTransitioningDelegate>
 

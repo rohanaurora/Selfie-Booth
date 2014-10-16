@@ -39,7 +39,6 @@
 -(void)viewDidLayoutSubviews {
     
     [super viewDidLayoutSubviews];
-    self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.95];
 
     // View controller's view's size
     CGSize size = self.view.bounds.size;

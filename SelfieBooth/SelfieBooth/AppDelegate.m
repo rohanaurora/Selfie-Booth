@@ -11,7 +11,6 @@
 #import "SelfieCollectionViewController.h"
 
 #define PNBlue [UIColor colorWithRed:67.0 / 255.0 green:104.0 / 255.0 blue:208.0 / 255.0 alpha:1.0f]
-#define PNRed [UIColor colorWithRed:201.0 / 255.0 green:35.0 / 255.0 blue:45.0 / 255.0 alpha:1.0f]
 
 @implementation AppDelegate
 
