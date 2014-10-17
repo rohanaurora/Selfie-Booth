@@ -21,6 +21,7 @@
 		9300554B19ED8A3E00940A7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9300554919ED8A3E00940A7A /* InfoPlist.strings */; };
 		9300554D19ED8A3E00940A7A /* SelfieBoothTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9300554C19ED8A3E00940A7A /* SelfieBoothTests.m */; };
 		931C132D19ED8B5700836BF1 /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 931C132B19ED8B5700836BF1 /* TemplateIcon2x.png */; };
+		932452FE19F0F318000E8041 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 932452FD19F0F318000E8041 /* MBProgressHUD.m */; };
 		932CFC8219ED8E11004C73DF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 932CFC8019ED8E11004C73DF /* Podfile */; };
 		93913A3219ED91C700C2E30B /* SelfieCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A3119ED91C700C2E30B /* SelfieCollectionViewController.m */; };
 		93913A3519ED939C00C2E30B /* SelfieViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A3419ED939C00C2E30B /* SelfieViewCell.m */; };
@@ -62,6 +63,8 @@
 		9300554A19ED8A3E00940A7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9300554C19ED8A3E00940A7A /* SelfieBoothTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfieBoothTests.m; sourceTree = "<group>"; };
 		931C132B19ED8B5700836BF1 /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
+		932452FC19F0F318000E8041 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		932452FD19F0F318000E8041 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		932CFC8019ED8E11004C73DF /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93913A3019ED91C700C2E30B /* SelfieCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfieCollectionViewController.h; sourceTree = "<group>"; };
 		93913A3119ED91C700C2E30B /* SelfieCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfieCollectionViewController.m; sourceTree = "<group>"; };
@@ -186,6 +189,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9324530019F0F452000E8041 /* Heads Up Display (HUD) */ = {
+			isa = PBXGroup;
+			children = (
+				932452FC19F0F318000E8041 /* MBProgressHUD.h */,
+				932452FD19F0F318000E8041 /* MBProgressHUD.m */,
+			);
+			name = "Heads Up Display (HUD)";
+			sourceTree = "<group>";
+		};
 		932CFC8419ED8E5D004C73DF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +254,7 @@
 		93A05C8519EE55E5000DEDB3 /* Custom Transition Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9324530019F0F452000E8041 /* Heads Up Display (HUD) */,
 				93913A4119EE4D6F00C2E30B /* PresentTransition.h */,
 				93913A4219EE4D6F00C2E30B /* PresentTransition.m */,
 				93913A4419EE4D9A00C2E30B /* DismissTransition.h */,
@@ -406,6 +419,7 @@
 				93913A3B19ED95CD00C2E30B /* SelfieController.m in Sources */,
 				93913A3819ED953B00C2E30B /* DetailsViewController.m in Sources */,
 				93913A3219ED91C700C2E30B /* SelfieCollectionViewController.m in Sources */,
+				932452FE19F0F318000E8041 /* MBProgressHUD.m in Sources */,
 				93913A3519ED939C00C2E30B /* SelfieViewCell.m in Sources */,
 				93913A4619EE4D9A00C2E30B /* DismissTransition.m in Sources */,
 				93913A4319EE4D6F00C2E30B /* PresentTransition.m in Sources */,

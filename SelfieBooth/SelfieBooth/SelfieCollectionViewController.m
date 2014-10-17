@@ -12,6 +12,7 @@
 #import "DetailsViewController.h"
 #import "PresentTransition.h"
 #import "DismissTransition.h"
+#import "MBProgressHUD.h"
 
 @interface SelfieCollectionViewController () <UIViewControllerTransitioningDelegate>
 
@@ -99,13 +100,24 @@
 // Tells the delegate that the photo at the specified index path was selected.
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSDictionary *photo = self.photos[indexPath.row];
-    DetailsViewController *dvc = [[DetailsViewController alloc] init];
-    dvc.modalPresentationStyle = UIModalPresentationCustom;
-    dvc.transitioningDelegate = self;
-    dvc.photo = photo;
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    [self presentViewController:dvc animated:YES completion:nil];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        
+        NSDictionary *photo = self.photos[indexPath.row];
+        DetailsViewController *dvc = [[DetailsViewController alloc] init];
+        dvc.modalPresentationStyle = UIModalPresentationCustom;
+        dvc.transitioningDelegate = self;
+        dvc.photo = photo;
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self presentViewController:dvc animated:YES completion:nil];
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+
+        });
+    });
+    
 }
 
 
