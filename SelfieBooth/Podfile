@@ -1,5 +1,10 @@
 source 'https://github.com/artsy/Specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
-pod 'SimpleAuth/Instagram'
-pod 'SAMCache'
+platform :ios, '7.0'
+inhibit_all_warnings!
+
+# Pods
+pod 'SimpleAuth/Instagram',:head
+pod 'SAMCache', :head
+pod 'SSKeychain', :head

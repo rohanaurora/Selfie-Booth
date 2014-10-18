@@ -9,19 +9,21 @@ PODS:
   - ReactiveCocoa/no-arc (2.3.1)
   - ReactiveCocoa/UI (2.3.1):
     - ReactiveCocoa/Core
-  - SAMCache (0.3.0)
-  - SimpleAuth/Core (0.3.6):
+  - SAMCache (HEAD based on 0.3.0)
+  - SimpleAuth/Core (HEAD based on 0.3.6):
     - CMDQueryStringSerialization
     - ReactiveCocoa
-  - SimpleAuth/Instagram (0.3.6):
+  - SimpleAuth/Instagram (HEAD based on 0.3.6):
     - SimpleAuth/Core
     - SimpleAuth/UI
-  - SimpleAuth/UI (0.3.6):
+  - SimpleAuth/UI (HEAD based on 0.3.6):
     - SimpleAuth/Core
+  - SSKeychain (HEAD based on 1.2.2)
 
 DEPENDENCIES:
-  - SAMCache
-  - SimpleAuth/Instagram
+  - SAMCache (HEAD)
+  - SimpleAuth/Instagram (HEAD)
+  - SSKeychain (HEAD)
 
 SPEC CHECKSUMS:
   CMDQueryStringSerialization: 96f05d3225b6a0f6b7445a308c9e50bf84a5ba13
@@ -29,5 +31,6 @@ SPEC CHECKSUMS:
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
   SAMCache: ab96161f1938a85b0fd426958fc7f36e29a9fe27
   SimpleAuth: 0664e22bff27c7f5b169254b421b1c761d002f65
+  SSKeychain: cc48bd3ad24fcd9125adb9e0d23dd50b8bbd08b9
 
 COCOAPODS: 0.34.2
