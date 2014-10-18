@@ -10,6 +10,8 @@
 #import <SimpleAuth/SimpleAuth.h>
 #import "SelfieCollectionViewController.h"
 
+#define kClientID @"2893e6e0cb97452583f336fa369a7faa"
+#define kURIKey @"selfiebooth://auth/instagram"
 #define PNBlue [UIColor colorWithRed:67.0 / 255.0 green:104.0 / 255.0 blue:208.0 / 255.0 alpha:1.0f]
 
 @implementation AppDelegate
@@ -18,8 +20,8 @@
 {
     // Get client ID from Instagram client - http://instagram.com/developer/clients/manage/
     
-    SimpleAuth.configuration[@"instagram"] = @{@"client_id" : @"2893e6e0cb97452583f336fa369a7faa",
-                                               SimpleAuthRedirectURIKey : @"selfiebooth://auth/instagram" };
+    SimpleAuth.configuration[@"instagram"] = @{@"client_id" : kClientID,
+                                               SimpleAuthRedirectURIKey : kURIKey};
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
