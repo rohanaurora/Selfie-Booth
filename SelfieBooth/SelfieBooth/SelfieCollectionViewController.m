@@ -149,7 +149,7 @@
         
         NSURLSessionConfiguration *sessionConfigForDeal = [NSURLSessionConfiguration defaultSessionConfiguration];
         
-        NSString *myString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/astonmartin/media/recent?access_token=%@", self.accessToken];
+        NSString *myString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/selfie/media/recent?access_token=%@", self.accessToken];
         NSURL * url = [NSURL URLWithString:myString];
         
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
