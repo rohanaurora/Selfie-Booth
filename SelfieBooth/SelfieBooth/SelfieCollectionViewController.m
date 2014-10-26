@@ -13,6 +13,8 @@
 #import "PresentTransition.h"
 #import "DismissTransition.h"
 #import "MBProgressHUD.h"
+#import <SSKeychain/SSKeychain.h>
+#import <SSKeychain/SSKeychainQuery.h>
 
 @interface SelfieCollectionViewController () <UIViewControllerTransitioningDelegate>
 
@@ -48,9 +50,10 @@
     
     
     // Saving access token on disk. Will use Keychain if time permits.
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    self.accessToken = [userDefaults objectForKey:@"accessToken"];
-    
+    NSString *password = [SSKeychain passwordForService:@"com.therohanaurora.SelfieBooth" account:@"user"];
+    self.accessToken = password;
+    NSLog(@"Retrieving access token from Keychain: %@", self.accessToken);
+
     
     // No access token: Create one and store.
     if (self.accessToken == nil) {
@@ -58,9 +61,11 @@
         [SimpleAuth authorize:@"instagram" options:@{@"scope":@[@"likes"]} completion:^(NSDictionary *responseObject, NSError *error) {
             
             self.accessToken = [[responseObject objectForKey:@"credentials"] objectForKey:@"token"];
+
+            NSLog(@"Securely saving access token");
+            [SSKeychain setPassword:self.accessToken forService:@"com.therohanaurora.SelfieBooth" account:@"user"];
+            NSLog(@"Access token saved in Keychain: %@", self.accessToken);
             
-            [userDefaults setObject:self.accessToken forKey:@"accessToken"];
-            [userDefaults synchronize];
             [self refresh];
         }];
     } else {
