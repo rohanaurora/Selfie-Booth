@@ -16,6 +16,8 @@
 #import <SSKeychain/SSKeychain.h>
 #import <SSKeychain/SSKeychainQuery.h>
 
+#define kPasswordForService @"com.therohanaurora.SelfieBooth"
+
 @interface SelfieCollectionViewController () <UIViewControllerTransitioningDelegate>
 
 @end
@@ -50,7 +52,7 @@
     
     
     // Saving access token on disk. Will use Keychain if time permits.
-    NSString *password = [SSKeychain passwordForService:@"com.therohanaurora.SelfieBooth" account:@"user"];
+    NSString *password = [SSKeychain passwordForService:kPasswordForService account:@"user"];
     self.accessToken = password;
     NSLog(@"Retrieving access token from Keychain: %@", self.accessToken);
 
@@ -63,7 +65,7 @@
             self.accessToken = [[responseObject objectForKey:@"credentials"] objectForKey:@"token"];
 
             NSLog(@"Securely saving access token");
-            [SSKeychain setPassword:self.accessToken forService:@"com.therohanaurora.SelfieBooth" account:@"user"];
+            [SSKeychain setPassword:self.accessToken forService:kPasswordForService account:@"user"];
             NSLog(@"Access token saved in Keychain: %@", self.accessToken);
             
             [self refresh];
