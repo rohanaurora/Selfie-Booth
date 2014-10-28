@@ -1,16 +1,14 @@
 # Selfie-Booth
 
-## Project 
-
 As a part of the interview process for Audible, Inc., an Amazon.com, Inc. subsidiary, I was given the following task -
 
 >Using the Instagram API, create an iOS app that displays photos tagged with hashtag #selfie. Then implement tap to enlarge feature. Complete as much as you can within one day.
 
 
-- [Dependencies](#Dependencies)
-- [Usage](#Usage)
-- [Instructions](#Instructions)
-- [Demo](#Demo)
+- [Dependencies](#dependencies)
+- [Usage](#usage)
+- [Instructions](#instructions)
+- [Demo](#demo)
 
 ## Dependencies 
 
