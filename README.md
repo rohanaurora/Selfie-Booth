@@ -14,7 +14,7 @@ As a part of the interview process for Audible, Inc., an Amazon.com, Inc. subsid
 
 [Instagram API Endpoints](http://instagram.com/developer/) are used to easily request data from Instagram.
 
-I raised an issue on Github - [Tag Endpoints: __max_\__tag_\__id__ (data still limited to 20 images)](https://github.com/Instagram/instagram-ruby-gem/issues/140).
+I raised an [issue on Github](https://github.com/Instagram/instagram-ruby-gem/issues/140) - *Tag Endpoints: max_tag_id (data still limited to 20 images)*.
 
 ## Usage
 
