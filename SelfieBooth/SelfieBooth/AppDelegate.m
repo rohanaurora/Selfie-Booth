@@ -21,7 +21,7 @@
     // Get client ID from Instagram client - http://instagram.com/developer/clients/manage/
     
     SimpleAuth.configuration[@"instagram"] = @{@"client_id" : kClientID,
-                                               SimpleAuthRedirectURIKey : kURIKey};
+                                   SimpleAuthRedirectURIKey : kURIKey};
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -85,6 +85,7 @@
                                               otherButtonTitles:nil];
         [alert show];
     }
+    
 }
 
 @end
