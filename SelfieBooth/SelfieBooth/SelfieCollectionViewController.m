@@ -27,7 +27,7 @@
 #pragma mark - Initialization
 
 -(instancetype) init {
-
+    
     
     // Layout for collection view
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -51,11 +51,9 @@
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
     
-    // Saving access token on disk. Will use Keychain if time permits.
+    // Saving access token using Keychain.
     NSString *password = [SSKeychain passwordForService:kPasswordForService account:@"user"];
     self.accessToken = password;
-    NSLog(@"Retrieving access token from Keychain: %@", self.accessToken);
-
     
     // No access token: Create one and store.
     if (self.accessToken == nil) {
@@ -63,14 +61,24 @@
         [SimpleAuth authorize:@"instagram" options:@{@"scope":@[@"likes"]} completion:^(NSDictionary *responseObject, NSError *error) {
             
             self.accessToken = [[responseObject objectForKey:@"credentials"] objectForKey:@"token"];
-
-            NSLog(@"Securely saving access token");
+            
             [SSKeychain setPassword:self.accessToken forService:kPasswordForService account:@"user"];
             NSLog(@"Access token saved in Keychain: %@", self.accessToken);
             
-            [self refresh];
+            // Get max_tag_id and then get media. Start OperationQueue.
+            NSOperationQueue *opQueue = [[NSOperationQueue alloc] init];
+            [opQueue setMaxConcurrentOperationCount:5];
+            
+            // Parallel task to get max_tag_id
+            [opQueue addOperation:[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(getMoreData) object:nil]];
+            
+            [opQueue waitUntilAllOperationsAreFinished];
+            [self downloadPhotos];
         }];
+        
     } else {
+        
+        NSLog(@"Retrieving access token from Keychain: %@", self.accessToken);
         
         // Get max_tag_id and then get media. Start OperationQueue.
         NSOperationQueue *opQueue = [[NSOperationQueue alloc] init];
@@ -80,9 +88,7 @@
         [opQueue addOperation:[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(getMoreData) object:nil]];
         
         [opQueue waitUntilAllOperationsAreFinished];
-        
-        // max_tag_id is ready to use, queue is run faster parallely.
-        [self refresh];
+        [self downloadPhotos];
     }
 }
 
@@ -116,12 +122,12 @@
         dvc.modalPresentationStyle = UIModalPresentationCustom;
         dvc.transitioningDelegate = self;
         dvc.photo = photo;
-
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self presentViewController:dvc animated:YES completion:nil];
             
             [MBProgressHUD hideHUDForView:self.view animated:YES];
-
+            
         });
     });
     
@@ -181,7 +187,7 @@
 #pragma mark - Second Network Call
 
 // Access token and max_tag_id exists. Download images.
--(void) refresh {
+-(void) downloadPhotos {
     
     NSURLSession *session = [NSURLSession sharedSession];
     
@@ -190,7 +196,7 @@
     
     NSString *tagMediaURL = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/selfies/media/recent?access_token=%@&max_tag_id=%@&count=200", self.accessToken, self.max_id];
     
-    NSLog(@"%@",tagMediaURL);
+    NSLog(@"URL to get media: %@",tagMediaURL);
     
     NSURL *urlString = [NSURL URLWithString:tagMediaURL];
     
