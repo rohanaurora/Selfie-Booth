@@ -13,24 +13,6 @@
 @implementation SelfieViewCell
 
 
-#pragma mark - Initialization
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-        // Initialization code
-        self.imageView = [[UIImageView alloc] init];
-        
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(likeSelfie)];
-        tap.numberOfTapsRequired = 2;
-        [self addGestureRecognizer:tap];
-        [self.contentView addSubview:self.imageView];
-    }
-    return self;
-}
-
 #pragma mark - Set Photo (Cell)
 
 -(void) setPhoto:(NSDictionary *)photo {
@@ -38,11 +20,28 @@
     
     // Class method
     [SelfieController imageForPhoto:_photo size:@"thumbnail" completion:^(UIImage *image) {
-
+        
         self.imageView.image = image;
     }];
 }
 
+#pragma mark - Long press gesture recognition
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.imageView = [[UIImageView alloc] init];
+        self.imageView.backgroundColor = [UIColor colorWithWhite:0.95f alpha:1.0f];
+        
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(likeSelfie)];
+        longPress.minimumPressDuration = 1.0f;
+        [self addGestureRecognizer:longPress];
+        
+        [self.contentView addSubview:self.imageView];
+    }
+    return self;
+}
 
 #pragma mark - Photo Layout (Cell)
 
