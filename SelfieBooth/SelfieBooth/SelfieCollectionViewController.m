@@ -18,7 +18,7 @@
 
 #define kPasswordForService @"com.therohanaurora.SelfieBooth"
 
-@interface SelfieCollectionViewController () <UIViewControllerTransitioningDelegate>
+@interface SelfieCollectionViewController ()
 
 @end
 
