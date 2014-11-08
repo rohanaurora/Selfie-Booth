@@ -44,7 +44,7 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Selfie Booth (Audible Inc.) ";
+    self.title = @"Selfie Booth";
     
     // Register class for cells.
     [self.collectionView registerClass:[SelfieViewCell class] forCellWithReuseIdentifier:@"photo"];
