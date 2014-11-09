@@ -10,7 +10,7 @@ As a part of the interview process for Audible, Inc., an Amazon.com, Inc. subsid
 - [Instructions](#instructions)
 - [Demo](#demo)
 
-## Dependencies 
+## Issues 
 
 [Instagram API Endpoints](http://instagram.com/developer/) are used to easily request data from Instagram.
 
