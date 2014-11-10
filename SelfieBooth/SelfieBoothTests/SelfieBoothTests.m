@@ -7,9 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "AppDelegate.h"
+#import "SelfieCollectionViewController.h"
 
 @interface SelfieBoothTests : XCTestCase
-
+@property (nonatomic, strong) SelfieCollectionViewController *scv;
 @end
 
 @implementation SelfieBoothTests
@@ -18,17 +20,26 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.scv = [SelfieCollectionViewController new];
 }
 
 - (void)tearDown
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    self.scv = nil;
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+
+-(void)testIfCollectionView {
+    
+    XCTAssertTrue([self.scv isKindOfClass:[UICollectionViewController class]], @"SelfieCollectionViewController should be a subclass of UICollectionView");
 }
+
+-(void)testIfViewControllerIsNil {
+    
+    XCTAssertNotNil([self.scv view], @"ViewController should contain a view");
+}
+
 
 @end
