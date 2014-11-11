@@ -90,7 +90,40 @@
         [opQueue waitUntilAllOperationsAreFinished];
         [self downloadPhotos];
     }
+    
+    CGFloat customRefreshControlHeight = 50.0f;
+    CGFloat customRefreshControlWidth = 320.0f;
+    CGRect customRefreshControlFrame = CGRectMake(0.0f,
+                                                  -customRefreshControlHeight,
+                                                  customRefreshControlWidth,
+                                                  customRefreshControlHeight);
+    // TODO: Pull-to-refresh
+    self.customRefreshControl = [[CustomRefreshControl alloc] initWithFrame:customRefreshControlFrame];
+    
+    [self.collectionView addSubview:self.customRefreshControl];
+    [self.customRefreshControl addTarget:self
+                                  action:@selector(refresh)
+                        forControlEvents:UIControlEventValueChanged];
+
 }
+
+
+#pragma Pull to refresh
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self.customRefreshControl containingScrollViewDidEndDragging:scrollView];
+}
+
+
+- (void)containingScrollViewDidEndDragging:(UIScrollView *)containingScrollView
+{
+    CGFloat minOffsetToTriggerRefresh = 50.0f;
+    if (containingScrollView.contentOffset.y <= -minOffsetToTriggerRefresh) {
+        [self sendActionsForControlEvents:UIControlEventValueChanged];
+    }
+}
+
 
 
 #pragma mark - UICollectionView Delegate

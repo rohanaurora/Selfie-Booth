@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelfieCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate>
+@interface SelfieCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate> {
+    
+    UIRefreshControl *customRefreshControl;
+}
+
+
 
 /// A valid access token from Instagram.
 @property (nonatomic, strong) NSString *accessToken;
