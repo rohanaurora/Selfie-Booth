@@ -46,6 +46,13 @@
     
     self.title = @"Selfie Booth";
     
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.tintColor = [UIColor grayColor];
+    self.refreshControl.backgroundColor = [UIColor lightGrayColor];
+    [self.refreshControl addTarget:self action:@selector(refershControlAction) forControlEvents:UIControlEventValueChanged];
+    [self.collectionView addSubview:self.refreshControl];
+    self.collectionView.alwaysBounceVertical = YES;
+    
     // Register class for cells.
     [self.collectionView registerClass:[SelfieViewCell class] forCellWithReuseIdentifier:@"photo"];
     self.collectionView.backgroundColor = [UIColor whiteColor];
@@ -90,40 +97,7 @@
         [opQueue waitUntilAllOperationsAreFinished];
         [self downloadPhotos];
     }
-    
-    CGFloat customRefreshControlHeight = 50.0f;
-    CGFloat customRefreshControlWidth = 320.0f;
-    CGRect customRefreshControlFrame = CGRectMake(0.0f,
-                                                  -customRefreshControlHeight,
-                                                  customRefreshControlWidth,
-                                                  customRefreshControlHeight);
-    // TODO: Pull-to-refresh
-    self.customRefreshControl = [[CustomRefreshControl alloc] initWithFrame:customRefreshControlFrame];
-    
-    [self.collectionView addSubview:self.customRefreshControl];
-    [self.customRefreshControl addTarget:self
-                                  action:@selector(refresh)
-                        forControlEvents:UIControlEventValueChanged];
-
 }
-
-
-#pragma Pull to refresh
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    [self.customRefreshControl containingScrollViewDidEndDragging:scrollView];
-}
-
-
-- (void)containingScrollViewDidEndDragging:(UIScrollView *)containingScrollView
-{
-    CGFloat minOffsetToTriggerRefresh = 50.0f;
-    if (containingScrollView.contentOffset.y <= -minOffsetToTriggerRefresh) {
-        [self sendActionsForControlEvents:UIControlEventValueChanged];
-    }
-}
-
 
 
 #pragma mark - UICollectionView Delegate
@@ -256,6 +230,21 @@
     [task resume];
 }
 
+#pragma mark - Pull-to-refresh Control
+
+-(void) refershControlAction {
+    // Doing something on the main thread
+
+    NSOperationQueue *opQueue = [[NSOperationQueue alloc] init];
+    [opQueue setMaxConcurrentOperationCount:5];
+    
+    // Parallel task to get max_tag_id
+    [opQueue addOperation:[[NSInvocationOperation alloc] initWithTarget:self selector:@selector(getMoreData) object:nil]];
+    
+    [opQueue waitUntilAllOperationsAreFinished];
+    [self downloadPhotos];
+    [self.refreshControl endRefreshing];
+}
 
 
 @end
