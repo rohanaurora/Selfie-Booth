@@ -26,9 +26,11 @@ Browse your Instagram **#selfie** photos with a double click. This was accomplis
 
 2) Build the project Command (⌘) + R, after you choose the type of iOS Simulator.
 
-3) Long press on the image to set an Instagram like.
+3) Use pull-to-refresh feature to download update the photos.
 
-4) Single-click (tap) on the image to see an enlarged view and repeat the same to dismiss the selfie.
+4) Long press on the image to set an Instagram like.
+
+5) Single-click (tap) on the image to see an enlarged view and repeat the same to dismiss the selfie.
 
 ## Demo
 ![Screenshot](http://i.imgur.com/thjWsSh.gif)
