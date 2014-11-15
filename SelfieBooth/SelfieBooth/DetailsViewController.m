@@ -9,6 +9,9 @@
 #import "DetailsViewController.h"
 #import "SelfieController.h"
 
+#define kFullImageWidth  320
+#define kFullImageHeight 320
+
 @interface DetailsViewController ()
 
 @end
@@ -21,7 +24,7 @@
     
     self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.95];
     
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kFullImageWidth, kFullImageHeight)];
     [self.view addSubview:self.imageView];
     
     // Class Method
