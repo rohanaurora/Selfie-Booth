@@ -17,6 +17,8 @@
 #import <SSKeychain/SSKeychainQuery.h>
 
 #define kPasswordForService @"com.therohanaurora.SelfieBooth"
+#define kWidth 160.0
+#define kHeight 160.0
 
 @interface SelfieCollectionViewController ()
 
@@ -31,7 +33,7 @@
     
     // Layout for collection view
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(106.0, 106.0);
+    layout.itemSize = CGSizeMake(kWidth, kHeight);
     layout.minimumInteritemSpacing = 1.0;
     layout.minimumLineSpacing = 1.0;
     
