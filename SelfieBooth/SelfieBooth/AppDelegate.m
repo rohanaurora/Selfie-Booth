@@ -59,33 +59,11 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    
-    NSString * const ServerHost = @"www.google.com";
-    NetCheck *netCheck = [[NetCheck alloc] init];
-    netCheck.delegate = self;
-    [netCheck checkReachabilityForHost:ServerHost];
-    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-# pragma mark - NetCheckDelegate
-
-- (void)reachabilityFinishedWithInternetReachable:(Boolean)internetReachable HostReachable:(Boolean)hostReachable {
-    
-    if (!(internetReachable && hostReachable)) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection"
-                                                        message:@"You must be connected to the internet to use this app."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-    
 }
 
 @end

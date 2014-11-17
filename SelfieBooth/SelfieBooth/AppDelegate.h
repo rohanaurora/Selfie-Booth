@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NetCheck.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, NetCheckDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
