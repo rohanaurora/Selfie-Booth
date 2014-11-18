@@ -72,7 +72,7 @@
             self.accessToken = [[responseObject objectForKey:@"credentials"] objectForKey:@"token"];
             
             [SSKeychain setPassword:self.accessToken forService:kPasswordForService account:@"user"];
-            NSLog(@"Access token saved in Keychain: %@", self.accessToken);
+            DLog(@"Access token saved in Keychain: %@", self.accessToken);
             
             // Get max_tag_id and then get media. Start OperationQueue.
             NSOperationQueue *opQueue = [[NSOperationQueue alloc] init];
@@ -87,7 +87,7 @@
         
     } else {
         
-        NSLog(@"Retrieving access token from Keychain: %@", self.accessToken);
+        ALog(@"Retrieving access token from Keychain: %@", self.accessToken);
         
         // Get max_tag_id and then get media. Start OperationQueue.
         NSOperationQueue *opQueue = [[NSOperationQueue alloc] init];
@@ -175,11 +175,11 @@
             NSDictionary *paginationResponse = [NSJSONSerialization JSONObjectWithData:newData options:kNilOptions error:nil];
             
             getIDDictionary = [[paginationResponse objectForKey:@"pagination"] objectForKey:@"next_max_tag_id"];
-            NSLog(@"Updated max_id is %@",getIDDictionary);
+            DLog(@"Updated max_id is %@",getIDDictionary);
             
             // Error response if anything fails
             if (getIDDictionary == NULL) {
-                NSLog(@"%@",paginationResponse);
+                DLog(@"%@",paginationResponse);
             }
             
             dispatch_semaphore_signal(semaphore);
@@ -205,7 +205,7 @@
     
     NSString *tagMediaURL = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/selfies/media/recent?access_token=%@&max_tag_id=%@&count=200", self.accessToken, self.max_id];
     
-    NSLog(@"URL to get media: %@",tagMediaURL);
+    DLog(@"URL to get media: %@",tagMediaURL);
     
     NSURL *urlString = [NSURL URLWithString:tagMediaURL];
     
@@ -216,7 +216,7 @@
         NSData *myData = [[NSData alloc] initWithContentsOfURL:location];
         
         //  NSString *text = [NSString stringWithContentsOfURL:location encoding:NSUTF8StringEncoding error:nil];
-        //  NSLog(@"Text - %@",text);
+        //  DLog(@"Text - %@",text);
         
         NSDictionary *myJSON = [NSJSONSerialization JSONObjectWithData:myData options:kNilOptions error:nil];
         
