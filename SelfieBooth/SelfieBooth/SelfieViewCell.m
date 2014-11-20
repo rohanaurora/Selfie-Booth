@@ -43,7 +43,7 @@
     return self;
 }
 
-#pragma mark - Photo Layout (Cell)
+#pragma mark - Photo Cell Layout
 
 -(void) layoutSubviews {
     [super layoutSubviews];
@@ -52,7 +52,7 @@
 }
 
 
-#pragma mark - Instagram Like (Network Call)
+#pragma mark - Instagram Like Network Call
 
 -(void) likeSelfie {
     
@@ -75,7 +75,7 @@
 }
 
 
-#pragma mark - Instagram Like (Alert)
+#pragma mark - Instagram Like
 
 -(void) showLikedCompletion {
     

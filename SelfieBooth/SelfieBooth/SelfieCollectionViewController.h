@@ -19,6 +19,7 @@
 /// Object for all photos in collection view.
 @property (nonatomic, strong) NSArray *photos;
 
+/// Object for pull-to-refresh feature
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
