@@ -25,13 +25,14 @@
     self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.95];
     
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kFullImageWidth, kFullImageHeight)];
+    NSAssert(self.imageView != nil, @"photos must not be nil");
+
     [self.view addSubview:self.imageView];
     
     // Class Method
     [SelfieController imageForPhoto:self.photo size:@"standard_resolution" completion:^(UIImage *image) {
         self.imageView.image = image;
     }];
-    
     
     // Tap to close
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(close)];
