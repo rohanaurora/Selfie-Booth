@@ -10,7 +10,7 @@
 
 @interface DetailsViewController : UIViewController
 
-@property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) NSDictionary *photo;
+@property (nonatomic, strong, readwrite) UIImageView *imageView;
+@property (nonatomic, strong, readwrite) NSDictionary *photo;
 
 @end
