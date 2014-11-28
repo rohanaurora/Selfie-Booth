@@ -213,14 +213,14 @@
     
     NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         
-        NSData *myData = [[NSData alloc] initWithContentsOfURL:location];
+        NSData *dataFromURL = [[NSData alloc] initWithContentsOfURL:location];
         
         //  NSString *text = [NSString stringWithContentsOfURL:location encoding:NSUTF8StringEncoding error:nil];
         //  DLog(@"Text - %@",text);
         
-        NSDictionary *myJSON = [NSJSONSerialization JSONObjectWithData:myData options:kNilOptions error:nil];
+        NSDictionary *photosDictionary = [NSJSONSerialization JSONObjectWithData:dataFromURL options:kNilOptions error:nil];
         
-        self.photos = [myJSON valueForKeyPath:@"data"];
+        self.photos = [photosDictionary valueForKeyPath:@"data"];
         
         // Main thread.
         dispatch_async(dispatch_get_main_queue(), ^{
