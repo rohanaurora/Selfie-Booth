@@ -12,7 +12,7 @@ As a part of the interview process for Audible, Inc., an Amazon.com, Inc. subsid
 
 ## Issues 
 
-[Instagram API Endpoints](http://instagram.com/developer/) are used to easily request data from Instagram.
+[Instagram API](http://instagram.com/developer/) is used to request data from Instagram.
 
 I raised an [issue on Github](https://github.com/Instagram/instagram-ruby-gem/issues/140) - *Tag Endpoints: max_tag_id (data still limited to 20 images)*.
 
