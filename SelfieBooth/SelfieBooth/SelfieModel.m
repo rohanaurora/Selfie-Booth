@@ -6,14 +6,10 @@
 //  Copyright (c) 2014 Rohan Aurora. All rights reserved.
 //
 
-#import "SelfieController.h"
+#import "SelfieModel.h"
 #import <SAMCache/SAMCache.h>
 
-@interface SelfieController ()
-
-@end
-
-@implementation SelfieController
+@implementation SelfieModel
 
 #pragma mark - Caching/Downloading Image
 

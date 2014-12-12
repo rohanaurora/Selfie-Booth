@@ -7,7 +7,7 @@
 //
 
 #import "DetailsViewController.h"
-#import "SelfieController.h"
+#import "SelfieModel.h"
 
 #define kFullImageWidth  320
 #define kFullImageHeight 320
@@ -30,7 +30,7 @@
     [self.view addSubview:self.imageView];
     
     // Class Method
-    [SelfieController imageForPhoto:self.photo size:@"standard_resolution" completion:^(UIImage *image) {
+    [SelfieModel imageForPhoto:self.photo size:@"standard_resolution" completion:^(UIImage *image) {
         self.imageView.image = image;
     }];
     

@@ -8,7 +8,7 @@
 
 #import "SelfieViewCell.h"
 #import "SelfieCollectionViewController.h"
-#import "SelfieController.h"
+#import "SelfieModel.h"
 
 @implementation SelfieViewCell
 
@@ -19,7 +19,7 @@
     _photo = photo;
     
     // Class method
-    [SelfieController imageForPhoto:_photo size:@"thumbnail" completion:^(UIImage *image) {
+    [SelfieModel imageForPhoto:_photo size:@"thumbnail" completion:^(UIImage *image) {
         
         self.imageView.image = image;
     }];

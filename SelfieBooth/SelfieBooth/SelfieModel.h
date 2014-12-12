@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelfieController : UIViewController
+@interface SelfieModel : NSObject
 
 + (void) imageForPhoto:(NSDictionary *)
             photo size:(NSString *)size
