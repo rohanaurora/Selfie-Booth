@@ -1,5 +1,5 @@
 //
-//  SelfieController.h
+//  SelfieModel.h
 //  SelfieBooth
 //
 //  Created by Rohan Aurora on 10/14/14.
