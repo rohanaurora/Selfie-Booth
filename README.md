@@ -1,6 +1,6 @@
 # Selfie-Booth
 
-As a part of the interview process for Audible, Inc., an Amazon.com, Inc. subsidiary, I was given the following task -
+As a part of the interview process for Audible, Inc., I was given the following task -
 
 >Using the Instagram API, create an iOS app that displays photos tagged with hashtag #selfie. Then implement tap to enlarge feature. Complete as much as you can within one day.
 
