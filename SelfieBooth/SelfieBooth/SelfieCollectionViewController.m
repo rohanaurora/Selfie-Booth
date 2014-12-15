@@ -46,7 +46,7 @@
 -(void) viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Selfie Booth";
+    self.navigationItem.title = @"Selfie Booth";
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.tintColor = [UIColor grayColor];
