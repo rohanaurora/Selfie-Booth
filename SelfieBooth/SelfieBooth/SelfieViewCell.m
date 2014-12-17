@@ -12,8 +12,9 @@
 
 @implementation SelfieViewCell
 
-
-#pragma mark - Set Photo (Cell)
+#pragma mark
+#pragma mark - Set photo in cells
+#pragma mark
 
 -(void) setPhoto:(NSDictionary *)photo {
     _photo = photo;
@@ -25,7 +26,9 @@
     }];
 }
 
+#pragma mark
 #pragma mark - Long press gesture recognition
+#pragma mark
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -43,7 +46,9 @@
     return self;
 }
 
+#pragma mark
 #pragma mark - Photo Cell Layout
+#pragma mark
 
 -(void) layoutSubviews {
     [super layoutSubviews];
@@ -51,8 +56,9 @@
     self.imageView.frame = self.contentView.bounds;
 }
 
-
+#pragma mark
 #pragma mark - Instagram Like Network Call
+#pragma mark
 
 -(void) likeSelfie {
     
@@ -74,8 +80,9 @@
     [task resume];
 }
 
-
+#pragma mark
 #pragma mark - Instagram Like
+#pragma mark
 
 -(void) showLikedCompletion {
     
