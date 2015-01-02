@@ -27,10 +27,10 @@
     
     SelfieCollectionViewController *svc = [SelfieCollectionViewController new];
     
-    UINavigationController *myNav = [[UINavigationController alloc] initWithRootViewController:svc];
-    self.window.rootViewController = myNav;
+    UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:svc];
+    self.window.rootViewController = navigationVC;
     
-    UINavigationBar *navigationBar = myNav.navigationBar;
+    UINavigationBar *navigationBar = navigationVC.navigationBar;
     navigationBar.barTintColor = PNBlue;
     navigationBar.barStyle = UIBarStyleBlackOpaque;
     
