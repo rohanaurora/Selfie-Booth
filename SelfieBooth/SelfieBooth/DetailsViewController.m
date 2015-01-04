@@ -39,7 +39,8 @@
     [self.view addGestureRecognizer:tap];
 }
 
-// Image layout
+#pragma mark - Image layout
+
 -(void)viewDidLayoutSubviews {
     
     [super viewDidLayoutSubviews];

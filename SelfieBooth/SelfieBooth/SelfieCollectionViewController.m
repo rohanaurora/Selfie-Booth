@@ -42,7 +42,6 @@
 
 -(instancetype) init {
     
-    
     // Layout for collection view
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.itemSize = CGSizeMake(kTileWidth, ktileHeight);
