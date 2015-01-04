@@ -25,7 +25,7 @@
     self.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.95];
     
     self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kFullImageWidth, kFullImageHeight)];
-    NSAssert(self.imageView != nil, @"photos must not be nil");
+    NSAssert(self.imageView != nil, @"Photos must not be nil");
 
     [self.view addSubview:self.imageView];
     
