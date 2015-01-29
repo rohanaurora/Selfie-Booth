@@ -22,7 +22,7 @@ Browse your Instagram **#selfie** photos with a double click. This was accomplis
 
 ## Instructions 
 
-1) Open *SelfieBooth.xcworkspace* in Xcode 5.1 or later.
+1) Open *SelfieBooth.xcworkspace* in Xcode 6.1 or later.
 
 2) Build the project Command (⌘) + R, after you choose the type of iOS Simulator.
 
