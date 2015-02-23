@@ -11,7 +11,7 @@
 #import "SelfieCollectionViewController.h"
 
 static NSString * const kClientID        =  @"2893e6e0cb97452583f336fa369a7faa";
-#define kURIKey     @"selfiebooth://auth/instagram"
+static NSString * const kURIKey          =  @"selfiebooth://auth/instagram";
 #define kBlue       [UIColor colorWithRed:67.0 / 255.0 green:104.0 / 255.0 blue:208.0 / 255.0 alpha:1.0f]
 
 @implementation AppDelegate
