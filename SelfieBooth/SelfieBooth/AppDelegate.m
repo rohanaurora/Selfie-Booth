@@ -12,7 +12,6 @@
 
 static NSString * const kClientID        =  @"2893e6e0cb97452583f336fa369a7faa";
 static NSString * const kURIKey          =  @"selfiebooth://auth/instagram";
-#define kBlue       [UIColor colorWithRed:67.0 / 255.0 green:104.0 / 255.0 blue:208.0 / 255.0 alpha:1.0f]
 
 @implementation AppDelegate
 
@@ -31,7 +30,7 @@ static NSString * const kURIKey          =  @"selfiebooth://auth/instagram";
     self.window.rootViewController = navigationVC;
     
     UINavigationBar *navigationBar = navigationVC.navigationBar;
-    navigationBar.barTintColor = kBlue;
+    navigationBar.barTintColor = [UIColor colorWithRed:67.0 / 255.0 green:104.0 / 255.0 blue:208.0 / 255.0 alpha:1.0f];;
     navigationBar.barStyle = UIBarStyleBlackOpaque;
     
     self.window.backgroundColor = [UIColor whiteColor];
