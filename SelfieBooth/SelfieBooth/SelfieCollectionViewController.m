@@ -18,7 +18,7 @@
 
 #define kPasswordForService @"com.therohanaurora.SelfieBooth"
 #define kTileWidth          106
-#define ktileHeight         106
+const CGFloat ktileHeight   = 106.0f;
 
 @interface SelfieCollectionViewController ()
 
