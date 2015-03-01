@@ -17,7 +17,7 @@
 #import <SSKeychain/SSKeychainQuery.h>
 
 #define kPasswordForService @"com.therohanaurora.SelfieBooth"
-#define kTileWidth          106
+const CGFloat kTileWidth   = 106.0f;
 const CGFloat ktileHeight   = 106.0f;
 
 @interface SelfieCollectionViewController ()
