@@ -165,7 +165,7 @@
 
 #pragma mark - Adding and Removing Cached Values
 
-- (void)setObject:(id <NSCopying>)object forKey:(NSString *)key {
+- (void)setObject:(id <NSCoding>)object forKey:(NSString *)key {
 	NSParameterAssert(key);
 
 	// If there's no object, delete the key.
@@ -177,9 +177,11 @@
 	// Save to memory cache
 	[self.cache setObject:object forKey:key];
 
-	dispatch_sync(self.diskQueue, ^{
+	dispatch_async(self.diskQueue, ^{
 		// Save to disk cache
-		[NSKeyedArchiver archiveRootObject:object toFile:[self _pathForKey:key]];
+		NSString *path = [self _pathForKey:key];
+		[NSKeyedArchiver archiveRootObject:object toFile:path];
+		[self _excludeFileFromBackup:[NSURL fileURLWithPath:path]];
 	});
 }
 
@@ -202,6 +204,7 @@
 		for (NSString *path in [self.fileManager contentsOfDirectoryAtPath:self.directory error:nil]) {
 			[self.fileManager removeItemAtPath:[self.directory stringByAppendingPathComponent:path] error:nil];
 		}
+		[self.fileManager removeItemAtPath:self.directory error:nil];
 	});
 }
 
@@ -227,7 +230,7 @@
 }
 
 
-- (void)setObject:(id <NSCopying>)object forKeyedSubscript:(NSString *)key {
+- (void)setObject:(id <NSCoding>)object forKeyedSubscript:(NSString *)key {
 	NSParameterAssert(key);
 
 	[self setObject:object forKey:key];
@@ -256,6 +259,18 @@
 	return [self.directory stringByAppendingPathComponent:key];
 }
 
+- (BOOL)_excludeFileFromBackup:(NSURL *)fileUrl {
+	NSParameterAssert(fileUrl);
+	NSParameterAssert([[NSFileManager defaultManager] fileExistsAtPath:[fileUrl path]]);
+
+	NSError *error;
+	BOOL result = [fileUrl setResourceValue:@YES forKey:NSURLIsExcludedFromBackupKey error:&error];
+	if (error) {
+		NSLog(@"Failed to exclude file from backup: %@", error);
+	}
+	return result;
+}
+
 @end
 
 
@@ -264,6 +279,14 @@
 #import <UIKit/UIScreen.h>
 
 @implementation SAMCache (UIImageAdditions)
+
+- (NSString *)imagePathForKey:(NSString *)key {
+    NSParameterAssert(key);
+    
+	key = [[self class] _keyForImageKey:key];
+    NSString *path = [self pathForKey:key];
+    return path;
+}
 
 - (UIImage *)imageForKey:(NSString *)key {
 	NSParameterAssert(key);
@@ -340,7 +363,7 @@
 
 - (void)removeImageForKey:(NSString *)key {
 	NSParameterAssert(key);
-	[self removeImageForKey:[[self class] _keyForImageKey:key]];
+	[self removeObjectForKey:[[self class] _keyForImageKey:key]];
 }
 
 

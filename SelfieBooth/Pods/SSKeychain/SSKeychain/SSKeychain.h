@@ -6,7 +6,7 @@
 //  Copyright (c) 2010-2014 Sam Soffes. All rights reserved.
 //
 
-#import "SSKeychainQuery.h"
+#import <SSKeychain/SSKeychainQuery.h>
 
 /**
  Error code specific to SSKeychain that can be returned in NSError objects.
@@ -124,7 +124,7 @@ extern NSString *const kSSKeychainWhereKey;
 
  @param serviceName The service for which to return the corresponding accounts.
 
- @return An array of dictionaries containing the Keychain's accountsfor a given `serviceName`, or `nil` if the Keychain
+ @return An array of dictionaries containing the Keychain's accounts for a given `serviceName`, or `nil` if the Keychain
  doesn't have any accounts for the given `serviceName`. The order of the objects in the array isn't defined.
  */
 + (NSArray *)accountsForService:(NSString *)serviceName;
