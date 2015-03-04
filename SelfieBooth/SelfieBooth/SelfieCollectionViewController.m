@@ -19,6 +19,7 @@
 static NSString *const kPasswordForService  = @"com.therohanaurora.SelfieBooth";
 const CGFloat kTileWidth                    = 106.0f;
 const CGFloat ktileHeight                   = 106.0f;
+const CGFloat kTileSpacing                  =   1.0f;
 
 @interface SelfieCollectionViewController ()
 
@@ -45,8 +46,8 @@ const CGFloat ktileHeight                   = 106.0f;
     // Layout for collection view
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.itemSize = CGSizeMake(kTileWidth, ktileHeight);
-    layout.minimumInteritemSpacing = 1.0;
-    layout.minimumLineSpacing = 1.0;
+    layout.minimumInteritemSpacing = kTileSpacing;
+    layout.minimumLineSpacing = kTileSpacing;
     
     return (self = [super initWithCollectionViewLayout:layout]);
 }
