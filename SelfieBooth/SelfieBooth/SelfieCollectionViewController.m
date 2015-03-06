@@ -17,6 +17,8 @@
 #import <SSKeychain/SSKeychainQuery.h>
 
 static NSString *const kPasswordForService  = @"com.therohanaurora.SelfieBooth";
+static NSString *const kSelfieBoothTitle    = @"Selfie Booth";
+
 const CGFloat kTileWidth                    = 106.0f;
 const CGFloat ktileHeight                   = 106.0f;
 const CGFloat kTileSpacing                  =   1.0f;
@@ -58,7 +60,7 @@ const CGFloat kTileSpacing                  =   1.0f;
 -(void) viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"Selfie Booth";
+    self.navigationItem.title = kSelfieBoothTitle;
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl.tintColor = [UIColor grayColor];
