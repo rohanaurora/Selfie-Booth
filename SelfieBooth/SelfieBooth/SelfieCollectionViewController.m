@@ -16,8 +16,9 @@
 #import <SSKeychain/SSKeychain.h>
 #import <SSKeychain/SSKeychainQuery.h>
 
-static NSString *const kPasswordForService  = @"com.therohanaurora.SelfieBooth";
-static NSString *const kSelfieBoothTitle    = @"Selfie Booth";
+static NSString * const kPasswordForService  = @"com.therohanaurora.SelfieBooth";
+static NSString * const kSelfieBoothTitle    = @"Selfie Booth";
+static NSString * const kMediaURL            = @"https://api.instagram.com/v1/tags/selfies/media/recent?access_token=%@&max_tag_id=%@&count=200";
 
 const CGFloat kTileWidth                    = 106.0f;
 const CGFloat ktileHeight                   = 106.0f;
@@ -217,7 +218,7 @@ const CGFloat kTileSpacing                  =   1.0f;
     // Trying to access more than 20 images. Pulled a request on Github - https://github.com/Instagram/instagram-ruby-gem/issues/140
     // Currently, able to fetch 33 images with a &count parameter to URL
     
-    NSString *tagMediaURL = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/selfies/media/recent?access_token=%@&max_tag_id=%@&count=200", self.accessToken, self.max_id];
+    NSString *tagMediaURL = [NSString stringWithFormat:kMediaURL, self.accessToken, self.max_id];
     
     DLog(@"URL to get media: %@",tagMediaURL);
     
