@@ -19,6 +19,7 @@
 static NSString * const kPasswordForService  = @"com.therohanaurora.SelfieBooth";
 static NSString * const kSelfieBoothTitle    = @"Selfie Booth";
 static NSString * const kMediaURL            = @"https://api.instagram.com/v1/tags/selfies/media/recent?access_token=%@&max_tag_id=%@&count=200";
+static NSString * const kAccessTokenURL      = @"https://api.instagram.com/v1/tags/selfie/media/recent?access_token=%@";
 
 const CGFloat kTileWidth                    = 106.0f;
 const CGFloat ktileHeight                   = 106.0f;
@@ -179,7 +180,7 @@ const CGFloat kTileSpacing                  =   1.0f;
         
         NSURLSessionConfiguration *sessionConfigForDeal = [NSURLSessionConfiguration defaultSessionConfiguration];
         
-        NSString *myString = [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/selfie/media/recent?access_token=%@", self.accessToken];
+        NSString *myString = [NSString stringWithFormat:kAccessTokenURL, self.accessToken];
         NSURL * url = [NSURL URLWithString:myString];
         
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
