@@ -252,7 +252,6 @@ const CGFloat kTileSpacing                  =   1.0f;
 
 -(void) refershControlAction {
     // Doing something on the main thread
-
     NSOperationQueue *opQueue = [[NSOperationQueue alloc] init];
     [opQueue setMaxConcurrentOperationCount:5];
     

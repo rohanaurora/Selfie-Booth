@@ -10,6 +10,8 @@
 #import "SelfieCollectionViewController.h"
 #import "SelfieModel.h"
 
+static NSString * const kLikesURL      = @"https://api.instagram.com/v1/media/%@/likes?access_token=%@";
+
 @implementation SelfieViewCell
 
 #pragma mark - Set photo in cells
@@ -59,7 +61,7 @@
 
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"];
     
-    NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.instagram.com/v1/media/%@/likes?access_token=%@", self.photo[@"id"],accessToken ];
+    NSString *urlString = [[NSString alloc] initWithFormat:kLikesURL, self.photo[@"id"],accessToken ];
     
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
