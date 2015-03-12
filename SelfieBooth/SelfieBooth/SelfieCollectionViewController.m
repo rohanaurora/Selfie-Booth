@@ -180,8 +180,8 @@ const CGFloat kTileSpacing                  =   1.0f;
         
         NSURLSessionConfiguration *sessionConfigForDeal = [NSURLSessionConfiguration defaultSessionConfiguration];
         
-        NSString *myString = [NSString stringWithFormat:kAccessTokenURL, self.accessToken];
-        NSURL * url = [NSURL URLWithString:myString];
+        NSString *urlString = [NSString stringWithFormat:kAccessTokenURL, self.accessToken];
+        NSURL * url = [NSURL URLWithString:urlString];
         
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         
