@@ -18,21 +18,18 @@ static NSString * const kURIKey          =  @"selfiebooth://auth/instagram";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Get client ID from Instagram client - http://instagram.com/developer/clients/manage/
-    
-    SimpleAuth.configuration[@"instagram"] = @{@"client_id" : kClientID,
-                                   SimpleAuthRedirectURIKey : kURIKey};
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+
+    // Get client ID from Instagram client - http://instagram.com/developer/clients/manage/
+    SimpleAuth.configuration[@"instagram"] = @{@"client_id" : kClientID, SimpleAuthRedirectURIKey : kURIKey};
+
     SelfieCollectionViewController *svc = [SelfieCollectionViewController new];
     UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:svc];
     self.window.rootViewController = navigationVC;
     
     UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"MyStoryBoard" bundle:nil];
     UIViewController *vc =[storybord instantiateInitialViewController];
-    
-    
     
     UINavigationBar *navigationBar = navigationVC.navigationBar;
     navigationBar.barTintColor = [UIColor colorWithRed:67.0 / 255.0 green:104.0 / 255.0 blue:208.0 / 255.0 alpha:1.0f];;
