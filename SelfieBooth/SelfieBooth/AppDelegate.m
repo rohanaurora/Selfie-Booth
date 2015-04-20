@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <SimpleAuth/SimpleAuth.h>
 #import "SelfieCollectionViewController.h"
+#import "ViewController.h"
 
 static NSString * const kClientID        =  @"2893e6e0cb97452583f336fa369a7faa";
 static NSString * const kURIKey          =  @"selfiebooth://auth/instagram";
@@ -25,9 +26,13 @@ static NSString * const kURIKey          =  @"selfiebooth://auth/instagram";
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     SelfieCollectionViewController *svc = [SelfieCollectionViewController new];
-    
     UINavigationController *navigationVC = [[UINavigationController alloc] initWithRootViewController:svc];
     self.window.rootViewController = navigationVC;
+    
+    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"MyStoryBoard" bundle:nil];
+    UIViewController *vc =[storybord instantiateInitialViewController];
+    
+    
     
     UINavigationBar *navigationBar = navigationVC.navigationBar;
     navigationBar.barTintColor = [UIColor colorWithRed:67.0 / 255.0 green:104.0 / 255.0 blue:208.0 / 255.0 alpha:1.0f];;
