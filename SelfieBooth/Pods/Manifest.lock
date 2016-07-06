@@ -1,36 +1,54 @@
 PODS:
-  - CMDQueryStringSerialization (0.3.2):
+  - CMDQueryStringSerialization (0.4.1):
     - ISO8601
-  - ISO8601 (0.1.1)
-  - ReactiveCocoa (2.4.7):
-    - ReactiveCocoa/UI (= 2.4.7)
-  - ReactiveCocoa/Core (2.4.7):
+  - ISO8601 (0.6.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.4.7)
-  - ReactiveCocoa/UI (2.4.7):
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
-  - SAMCache (HEAD based on 0.3.0)
-  - SimpleAuth/Core (HEAD based on 0.3.6):
+  - SAMCache (0.3.3)
+  - SimpleAuth/Core (0.3.9):
     - CMDQueryStringSerialization
     - ReactiveCocoa
-  - SimpleAuth/Instagram (HEAD based on 0.3.6):
+  - SimpleAuth/Instagram (0.3.9):
     - SimpleAuth/Core
-    - SimpleAuth/UI
-  - SimpleAuth/UI (HEAD based on 0.3.6):
-    - SimpleAuth/Core
-  - SSKeychain (HEAD based on 1.2.2)
+  - SSKeychain (1.4.0)
 
 DEPENDENCIES:
-  - SAMCache (HEAD)
-  - SimpleAuth/Instagram (HEAD)
-  - SSKeychain (HEAD)
+  - SAMCache (from `https://github.com/soffes/SAMCache`)
+  - SimpleAuth/Instagram (from `https://github.com/calebd/SimpleAuth`)
+  - SSKeychain (from `https://github.com/soffes/sskeychain`)
+
+EXTERNAL SOURCES:
+  SAMCache:
+    :git: https://github.com/soffes/SAMCache
+  SimpleAuth:
+    :git: https://github.com/calebd/SimpleAuth
+  SSKeychain:
+    :git: https://github.com/soffes/sskeychain
+
+CHECKOUT OPTIONS:
+  SAMCache:
+    :commit: f91a8aba6556b41646a3f5ececfb53aa62aad03e
+    :git: https://github.com/soffes/SAMCache
+  SimpleAuth:
+    :commit: 838aa6d6c20a81924aec99cf9fb27e4b13bf7a30
+    :git: https://github.com/calebd/SimpleAuth
+  SSKeychain:
+    :commit: 4fcac2c3d624275e3382a58b1af52a00f2afc5c3
+    :git: https://github.com/soffes/sskeychain
 
 SPEC CHECKSUMS:
-  CMDQueryStringSerialization: bc824b96c08a3277d00c71504e13c9fa18c6b451
-  ISO8601: a6afce5fbe854024802367c814fac4aa8d3586f9
-  ReactiveCocoa: 313fc53cc9aeb2bbbc3f5f13c7eac16478d9af8f
-  SAMCache: ab96161f1938a85b0fd426958fc7f36e29a9fe27
-  SimpleAuth: 0664e22bff27c7f5b169254b421b1c761d002f65
-  SSKeychain: cc48bd3ad24fcd9125adb9e0d23dd50b8bbd08b9
+  CMDQueryStringSerialization: 4bb0a2f5e7d8d8678d911d88072274952cbef4e5
+  ISO8601: d3ea3ba9b752820cf92c6b47a9ee327e9f0e13fc
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SAMCache: 790b2623a3e087c903daff872c90c248726c4c82
+  SimpleAuth: bc7d594f90711a7e6ef7624dce5aa8c8b09770ab
+  SSKeychain: 3cbbfbb5e8527f18bb46fa828c7c9d0279bd305a
 
-COCOAPODS: 0.35.0
+PODFILE CHECKSUM: 047a66f7d20cf1df926f3a3fc5509eceac930134
+
+COCOAPODS: 1.0.1

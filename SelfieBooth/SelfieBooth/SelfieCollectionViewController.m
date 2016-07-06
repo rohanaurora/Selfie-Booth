@@ -25,6 +25,8 @@ const CGFloat kTileWidth                    = 106.0f;
 const CGFloat ktileHeight                   = 106.0f;
 const CGFloat kTileSpacing                  =   1.0f;
 
+static const CGFloat kPI = 3.14159;
+
 @interface SelfieCollectionViewController ()
 
 /// A valid access token from Instagram.

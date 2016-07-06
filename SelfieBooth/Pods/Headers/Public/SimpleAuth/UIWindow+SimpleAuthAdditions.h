@@ -1,1 +1,0 @@
-../../../SimpleAuth/Pod/UI/ios/UIWindow+SimpleAuthAdditions.h

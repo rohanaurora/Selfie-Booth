@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E5B182B735929205944464C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78854DE3ED7C5B00037FFB7A /* libPods.a */; };
+		1004CDFF553D73A204CC5D07 /* libPods-SelfieBooth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0DE3888CDF427E00490B1E6 /* libPods-SelfieBooth.a */; };
 		9300552819ED8A3D00940A7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9300552719ED8A3D00940A7A /* Foundation.framework */; };
 		9300552A19ED8A3D00940A7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9300552919ED8A3D00940A7A /* CoreGraphics.framework */; };
 		9300552C19ED8A3D00940A7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9300552B19ED8A3D00940A7A /* UIKit.framework */; };
@@ -27,6 +27,8 @@
 		93913A3B19ED95CD00C2E30B /* SelfieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A3A19ED95CD00C2E30B /* SelfieModel.m */; };
 		93913A4319EE4D6F00C2E30B /* PresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A4219EE4D6F00C2E30B /* PresentTransition.m */; };
 		93913A4619EE4D9A00C2E30B /* DismissTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 93913A4519EE4D9A00C2E30B /* DismissTransition.m */; };
+		BD5F2FEA1AE37802007F0DE9 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD5F2FE91AE37802007F0DE9 /* Storyboard.storyboard */; };
+		BD5F2FED1AE3784A007F0DE9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5F2FEC1AE3784A007F0DE9 /* ViewController.m */; };
 		BDC90B8319F2D0B300F29BCB /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BDC90B8119F2D0B300F29BCB /* Podfile */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		78854DE3ED7C5B00037FFB7A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CB625EFA1DDF360DBA2C862 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2B1A37994F6BC1DFC6370E32 /* Pods-SelfieBooth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfieBooth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SelfieBooth/Pods-SelfieBooth.debug.xcconfig"; sourceTree = "<group>"; };
+		60522B9987B982093AB8DB96 /* Pods-SelfieBooth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfieBooth.release.xcconfig"; path = "Pods/Target Support Files/Pods-SelfieBooth/Pods-SelfieBooth.release.xcconfig"; sourceTree = "<group>"; };
 		9300552419ED8A3D00940A7A /* SelfieBooth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfieBooth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9300552719ED8A3D00940A7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9300552919ED8A3D00940A7A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -73,7 +75,10 @@
 		93913A4219EE4D6F00C2E30B /* PresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentTransition.m; sourceTree = "<group>"; };
 		93913A4419EE4D9A00C2E30B /* DismissTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissTransition.h; sourceTree = "<group>"; };
 		93913A4519EE4D9A00C2E30B /* DismissTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissTransition.m; sourceTree = "<group>"; };
-		AE297308334D7DE852E11A91 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B0DE3888CDF427E00490B1E6 /* libPods-SelfieBooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SelfieBooth.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD5F2FE91AE37802007F0DE9 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		BD5F2FEB1AE3784A007F0DE9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BD5F2FEC1AE3784A007F0DE9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BDC90B8119F2D0B300F29BCB /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -85,7 +90,7 @@
 				9300552A19ED8A3D00940A7A /* CoreGraphics.framework in Frameworks */,
 				9300552C19ED8A3D00940A7A /* UIKit.framework in Frameworks */,
 				9300552819ED8A3D00940A7A /* Foundation.framework in Frameworks */,
-				1E5B182B735929205944464C /* libPods.a in Frameworks */,
+				1004CDFF553D73A204CC5D07 /* libPods-SelfieBooth.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +115,7 @@
 				9300554619ED8A3E00940A7A /* SelfieBoothTests */,
 				9300552619ED8A3D00940A7A /* Frameworks */,
 				9300552519ED8A3D00940A7A /* Products */,
-				AA0767B49904067A2C2CD348 /* Pods */,
+				C216DE8D07F274EFB920ECF6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,7 +135,7 @@
 				9300552919ED8A3D00940A7A /* CoreGraphics.framework */,
 				9300552B19ED8A3D00940A7A /* UIKit.framework */,
 				9300554019ED8A3E00940A7A /* XCTest.framework */,
-				78854DE3ED7C5B00037FFB7A /* libPods.a */,
+				B0DE3888CDF427E00490B1E6 /* libPods-SelfieBooth.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,6 +197,9 @@
 			children = (
 				9300553619ED8A3D00940A7A /* AppDelegate.h */,
 				9300553719ED8A3D00940A7A /* AppDelegate.m */,
+				BD5F2FEB1AE3784A007F0DE9 /* ViewController.h */,
+				BD5F2FEC1AE3784A007F0DE9 /* ViewController.m */,
+				BD5F2FE91AE37802007F0DE9 /* Storyboard.storyboard */,
 			);
 			name = Delegate;
 			sourceTree = "<group>";
@@ -244,15 +252,6 @@
 			name = "Custom Transition Classes";
 			sourceTree = "<group>";
 		};
-		AA0767B49904067A2C2CD348 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AE297308334D7DE852E11A91 /* Pods.debug.xcconfig */,
-				8CB625EFA1DDF360DBA2C862 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		BD80A7911A3ABB9800FA5217 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +272,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		C216DE8D07F274EFB920ECF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B1A37994F6BC1DFC6370E32 /* Pods-SelfieBooth.debug.xcconfig */,
+				60522B9987B982093AB8DB96 /* Pods-SelfieBooth.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,11 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9300555019ED8A3E00940A7A /* Build configuration list for PBXNativeTarget "SelfieBooth" */;
 			buildPhases = (
-				F6C32709EBF1CBCA5B5A2AF5 /* Check Pods Manifest.lock */,
+				518A91A3782C4F76EAF23370 /* [CP] Check Pods Manifest.lock */,
 				9300552019ED8A3D00940A7A /* Sources */,
 				9300552119ED8A3D00940A7A /* Frameworks */,
 				9300552219ED8A3D00940A7A /* Resources */,
-				4F3AF7E60DC6DA4E4000010F /* Copy Pods Resources */,
+				C1828843308D9E5ABB55B04C /* [CP] Embed Pods Frameworks */,
+				0BB3778EAFBF82C733382B16 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -351,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9300553219ED8A3D00940A7A /* InfoPlist.strings in Resources */,
+				BD5F2FEA1AE37802007F0DE9 /* Storyboard.storyboard in Resources */,
 				9300553A19ED8A3D00940A7A /* Images.xcassets in Resources */,
 				BDC90B8319F2D0B300F29BCB /* Podfile in Resources */,
 			);
@@ -367,34 +377,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F3AF7E60DC6DA4E4000010F /* Copy Pods Resources */ = {
+		0BB3778EAFBF82C733382B16 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SelfieBooth/Pods-SelfieBooth-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6C32709EBF1CBCA5B5A2AF5 /* Check Pods Manifest.lock */ = {
+		518A91A3782C4F76EAF23370 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1828843308D9E5ABB55B04C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SelfieBooth/Pods-SelfieBooth-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -408,6 +433,7 @@
 				93913A3B19ED95CD00C2E30B /* SelfieModel.m in Sources */,
 				93913A3819ED953B00C2E30B /* DetailsViewController.m in Sources */,
 				93913A3219ED91C700C2E30B /* SelfieCollectionViewController.m in Sources */,
+				BD5F2FED1AE3784A007F0DE9 /* ViewController.m in Sources */,
 				932452FE19F0F318000E8041 /* MBProgressHUD.m in Sources */,
 				93913A3519ED939C00C2E30B /* SelfieViewCell.m in Sources */,
 				93913A4619EE4D9A00C2E30B /* DismissTransition.m in Sources */,
@@ -456,7 +482,6 @@
 /* Begin XCBuildConfiguration section */
 		9300554E19ED8A3E00940A7A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE297308334D7DE852E11A91 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -495,7 +520,6 @@
 		};
 		9300554F19ED8A3E00940A7A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CB625EFA1DDF360DBA2C862 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -528,7 +552,7 @@
 		};
 		9300555119ED8A3E00940A7A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE297308334D7DE852E11A91 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 2B1A37994F6BC1DFC6370E32 /* Pods-SelfieBooth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -544,7 +568,7 @@
 		};
 		9300555219ED8A3E00940A7A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CB625EFA1DDF360DBA2C862 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 60522B9987B982093AB8DB96 /* Pods-SelfieBooth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -561,7 +585,6 @@
 		};
 		9300555419ED8A3E00940A7A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE297308334D7DE852E11A91 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SelfieBooth.app/SelfieBooth";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -585,7 +608,6 @@
 		};
 		9300555519ED8A3E00940A7A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CB625EFA1DDF360DBA2C862 /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SelfieBooth.app/SelfieBooth";
 				FRAMEWORK_SEARCH_PATHS = (

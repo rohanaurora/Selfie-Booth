@@ -5,6 +5,7 @@ platform :ios, '7.0'
 inhibit_all_warnings!
 
 # Pods
-pod 'SimpleAuth/Instagram', :head
-pod 'SAMCache', :head
-pod 'SSKeychain', :head
+pod 'SimpleAuth/Instagram', :git => 'https://github.com/calebd/SimpleAuth'
+pod 'SAMCache', :git => 'https://github.com/soffes/SAMCache'
+pod 'SSKeychain', :git => 'https://github.com/soffes/sskeychain'
+target 'SelfieBooth'

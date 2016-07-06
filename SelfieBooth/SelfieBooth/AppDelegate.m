@@ -32,7 +32,7 @@ static NSString * const kURIKey          =  @"selfiebooth://auth/instagram";
     UIViewController *vc =[storybord instantiateInitialViewController];
     
     UINavigationBar *navigationBar = navigationVC.navigationBar;
-    navigationBar.barTintColor = [UIColor colorWithRed:67.0 / 255.0 green:104.0 / 255.0 blue:208.0 / 255.0 alpha:1.0f];;
+    navigationBar.barTintColor = c
     navigationBar.barStyle = UIBarStyleBlackOpaque;
     
     self.window.backgroundColor = [UIColor whiteColor];
